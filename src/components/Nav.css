@@ -1,0 +1,12 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: var(--color-primary);
+}
+
+.navbar-links a {
+  color: var(--color-background);
+  text-decoration: none;
+  font-family: var(--font-primary);
+}
