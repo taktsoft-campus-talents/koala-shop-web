@@ -1,0 +1,76 @@
+@import "../styles/constants.css";
+
+.product-card-container {
+  max-width: 30rem;
+  margin: 1rem;
+  background-color: var(--color-background);
+  color: var(--color-text);
+  border-radius: 1rem;
+}
+
+.product-img {
+  width: 28rem;
+  height: auto;
+  margin: 1rem;
+  border-radius: 1rem;
+}
+
+.product-stock {
+  font-weight: 600;
+  width: fit-content;
+  color: white;
+  background-color: var(--color-primary);
+  padding: 0.35rem 0.75rem;
+  text-align: right;
+  float: right;
+  position: relative;
+  top: -3.07rem;
+  margin-right: 1rem;
+
+  border-bottom-right-radius: 1rem;
+  border-top-left-radius: 1rem;
+  margin-bottom: -2rem;
+}
+
+.out-of-stock {
+  background-color: var(--color-error);
+}
+
+.product-title {
+  margin: 0 1rem 1rem;
+  text-align: center;
+}
+
+.product-category {
+  color: var(--color-secondary);
+  margin: -0.5rem 0 0.75rem 1.5rem;
+}
+
+.product-cart-row {
+  display: flex;
+  justify-content: space-between;
+  margin: 1rem 1.5rem 1rem 2.5rem;
+}
+
+.product-price {
+  margin-top: 0.5rem;
+}
+
+.button-primary {
+  font-weight: 600;
+  font-size: 1.1rem;
+  padding: 0.5rem 1rem;
+  align-content: center;
+  border-radius: 0.5rem;
+  color: aliceblue;
+  background-color: var(--color-primary);
+}
+
+.product-desc {
+  margin: 1rem 1rem 0 2.5rem;
+  padding-bottom: 1.5rem;
+}
+
+.product-desc li {
+  margin-bottom: 0.75rem;
+}
