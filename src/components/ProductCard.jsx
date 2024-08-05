@@ -1,5 +1,6 @@
 import "./ProductCard.css";
-const ProductCard = ({ title, category, desc, img, price, stock }) => {
+export const ProductCard = ({ product }) => {
+  const { title, category, desc, img, price, stock } = product;
   // const ProductCard = () => {
   // Dummy data
   //   const title = "MSI GeForce RTX 4090 Gaming X Trio 24G";
@@ -13,20 +14,20 @@ const ProductCard = ({ title, category, desc, img, price, stock }) => {
   //   const price = 2011.95;
   //   const stock = 0;
   return (
-    <div className='product-card-container'>
-      <img className='product-img' src={img} alt={title} />
+    <div className="product-card-container">
+      <img className="product-img" src={img} alt={title} />
       <div
         className={stock > 0 ? "product-stock" : "product-stock out-of-stock"}
       >
         {stock > 0 ? `${stock} in stock` : "out of stock"}
       </div>
-      <h5 className='product-category'>{category}</h5>
-      <h2 className='product-title'>{title}</h2>
-      <div className='product-cart-row'>
-        <h3 className='product-price'>Price: €{price}</h3>
-        <button className='button-primary'>Add to cart</button>
+      <h5 className="product-category">{category}</h5>
+      <h2 className="product-title">{title}</h2>
+      <div className="product-cart-row">
+        <h3 className="product-price">Price: €{price}</h3>
+        <button className="button-primary">Add to cart</button>
       </div>
-      <ul className='product-desc'>
+      <ul className="product-desc">
         {desc.split("\n").map((element, index) => (
           <li key={index}>{element}</li>
         ))}
@@ -34,5 +35,3 @@ const ProductCard = ({ title, category, desc, img, price, stock }) => {
     </div>
   );
 };
-
-export default ProductCard;
