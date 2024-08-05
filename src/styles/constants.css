@@ -4,6 +4,7 @@
   --color-secondary: #386663; /* Teal */
   --color-background: #dadbd0; /* Light Gray */
   --color-text: #2f312a; /* Black */
+  --color-error: #ff5449; /* Coral Red */
 
   /* Fonts */
   --font-primary: "Open Sans", sans-serif;

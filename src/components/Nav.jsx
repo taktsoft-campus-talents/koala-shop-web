@@ -6,10 +6,10 @@ export function Nav() {
       <div className="logo">🐨</div>
       <ul className="navbar-links">
         <li>
-          <a href="#homepage">Homepage</a>
+          <a href="/">Homepage</a>
         </li>
         <li>
-          <a href="#products">Products</a>
+          <a href="/products">Products</a>
         </li>
         <li>
           <a href="#deals">Deals</a>
