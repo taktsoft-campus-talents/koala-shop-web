@@ -1,6 +1,7 @@
 import "./ProductCard.css";
 export const ProductCard = ({ product }) => {
-  const { title, category, desc, img, price, stock } = product;
+  const { title, category, description, img, price, leftInStock } = product;
+  console.log(product);
   // const ProductCard = () => {
   // Dummy data
   //   const title = "MSI GeForce RTX 4090 Gaming X Trio 24G";
@@ -17,9 +18,11 @@ export const ProductCard = ({ product }) => {
     <div className="product-card-container">
       <img className="product-img" src={img} alt={title} />
       <div
-        className={stock > 0 ? "product-stock" : "product-stock out-of-stock"}
+        className={
+          leftInStock > 0 ? "product-stock" : "product-stock out-of-stock"
+        }
       >
-        {stock > 0 ? `${stock} in stock` : "out of stock"}
+        {leftInStock > 0 ? `${leftInStock} in stock` : "out of stock"}
       </div>
       <h5 className="product-category">{category}</h5>
       <h2 className="product-title">{title}</h2>
@@ -28,7 +31,7 @@ export const ProductCard = ({ product }) => {
         <button className="button-primary">Add to cart</button>
       </div>
       <ul className="product-desc">
-        {desc.split("\n").map((element, index) => (
+        {description.split("\n").map((element, index) => (
           <li key={index}>{element}</li>
         ))}
       </ul>
