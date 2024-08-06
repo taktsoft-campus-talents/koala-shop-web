@@ -5,6 +5,7 @@ import "./index.css";
 import { RootLayout } from "./pages/RootLayout";
 import { Home } from "./pages/Home";
 import { Products } from "./pages/Products";
+import { ProductDetails } from "./pages/ProductDetails";
 
 const router = createBrowserRouter([
   {
@@ -18,6 +19,10 @@ const router = createBrowserRouter([
       {
         path: "products",
         element: <Products />,
+      },
+      {
+        path: "products/:id",
+        element: <ProductDetails />,
       },
     ],
   },
