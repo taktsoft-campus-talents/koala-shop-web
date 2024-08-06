@@ -5,7 +5,7 @@ import "./index.css";
 import { RootLayout } from "./pages/RootLayout";
 import { Home } from "./pages/Home";
 import { Products } from "./pages/Products";
-import { ContextProvider } from "./context/GlobalContext";
+import { CartProvider } from "./context/CartContext";
 
 const router = createBrowserRouter([
   {
@@ -25,9 +25,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <ContextProvider>
-    <React.StrictMode>
+  <React.StrictMode>
+    <CartProvider>
       <RouterProvider router={router} />
-    </React.StrictMode>
-  </ContextProvider>
+    </CartProvider>
+  </React.StrictMode>
 );

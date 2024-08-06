@@ -1,10 +1,10 @@
 import { useContext } from "react";
-import { GlobalContext } from "../context/GlobalContext";
+import { CartContext } from "../context/CartContext";
 import "./ProductCard.css";
 export const ProductCard = ({ product }) => {
-  const { addProductToCart } = useContext(GlobalContext);
+  const { addProductToCart } = useContext(CartContext);
   const { title, category, description, img, price, leftInStock } = product;
-  const onAddToCartClickHandler = () => {
+  const handleAddToCart = () => {
     if (leftInStock > 0) addProductToCart({ title, price });
   };
   // console.log(product);
@@ -36,7 +36,7 @@ export const ProductCard = ({ product }) => {
         <h3 className="product-price">Price: €{price}</h3>
         <button
           className="button-primary"
-          onClick={onAddToCartClickHandler}
+          onClick={handleAddToCart}
           disabled={leftInStock === 0}
         >
           Add to cart

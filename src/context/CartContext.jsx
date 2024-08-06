@@ -1,8 +1,8 @@
 import { createContext, useState } from "react";
 
-export const GlobalContext = createContext();
+export const CartContext = createContext();
 
-export const ContextProvider = ({ children }) => {
+export const CartProvider = ({ children }) => {
   // I propose to have a single context for all global values
   // like user login data, special offers, cart, etc
 
@@ -21,13 +21,13 @@ export const ContextProvider = ({ children }) => {
   };
 
   return (
-    <GlobalContext.Provider
+    <CartContext.Provider
       value={{
         userCart,
         addProductToCart,
       }}
     >
       {children}
-    </GlobalContext.Provider>
+    </CartContext.Provider>
   );
 };
