@@ -1,4 +1,5 @@
 import { useState } from "react";
+import { PromoCard } from "../components/PromoCard";
 
 export function Home() {
   const [name, setName] = useState(null);
@@ -15,6 +16,17 @@ export function Home() {
         <button type="submit">Log in</button>
         Your name: {name}
       </form>
+      <PromoCard
+        offer={{
+          id: 1,
+          title: "Laptop",
+          description: "Description 1",
+          price: 500,
+          image: "image1.jpg",
+          category: "Category 1",
+          leftInStock: 10,
+        }}
+      />
     </>
   );
 }

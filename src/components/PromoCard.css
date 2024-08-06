@@ -1,0 +1,43 @@
+@import "../styles/constants.css";
+
+.special-offer-container {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+}
+
+.special-offer-card {
+  background-color: var(--color-card-background);
+  color: var(--color-text);
+  border-radius: 1rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  width: 20rem;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.special-offer-card:hover {
+  transform: scale(1.05);
+  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.2);
+}
+
+.offer-image {
+  width: 100%;
+  height: auto;
+}
+
+.offer-details {
+  padding: 1.5rem;
+  text-align: center;
+}
+
+.offer-title {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.offer-price {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: var(--color-primary);
+}
