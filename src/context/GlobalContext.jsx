@@ -13,10 +13,10 @@ export const ContextProvider = ({ children }) => {
   // { productId, productName, productPrice, quantity }
 
   const addProductToCart = (product) => {
-    const { productId, productName, productPrice, quantity } = product;
+    const { title, price } = product;
     setUserCart([
       ...userCart,
-      { productId, productName, productPrice, quantity },
+      { title, price, quantity: userCart.quantity + 1 },
     ]);
   };
 

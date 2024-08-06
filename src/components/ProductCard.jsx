@@ -1,7 +1,13 @@
+import { useContext } from "react";
+import { GlobalContext } from "../context/GlobalContext";
 import "./ProductCard.css";
 export const ProductCard = ({ product }) => {
+  const { addProductToCart } = useContext(GlobalContext);
   const { title, category, description, img, price, leftInStock } = product;
-  console.log(product);
+  const onAddToCartClickHandler = () => {
+    if (leftInStock > 0) addProductToCart({ title, price });
+  };
+  // console.log(product);
   // const ProductCard = () => {
   // Dummy data
   //   const title = "MSI GeForce RTX 4090 Gaming X Trio 24G";
@@ -28,7 +34,13 @@ export const ProductCard = ({ product }) => {
       <h2 className="product-title">{title}</h2>
       <div className="product-cart-row">
         <h3 className="product-price">Price: €{price}</h3>
-        <button className="button-primary">Add to cart</button>
+        <button
+          className="button-primary"
+          onClick={onAddToCartClickHandler}
+          disabled={leftInStock === 0}
+        >
+          Add to cart
+        </button>
       </div>
       <ul className="product-desc">
         {description.split("\n").map((element, index) => (
