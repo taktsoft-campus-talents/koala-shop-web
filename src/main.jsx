@@ -5,7 +5,7 @@ import "./index.css";
 import { RootLayout } from "./pages/RootLayout";
 import { Home } from "./pages/Home";
 import { Products } from "./pages/Products";
-import { GlobalContext } from "./context/GlobalContext";
+import { ContextProvider } from "./context/GlobalContext";
 
 const router = createBrowserRouter([
   {
@@ -25,9 +25,9 @@ const router = createBrowserRouter([
 ]);
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <GlobalContext>
+  <ContextProvider>
+    <React.StrictMode>
       <RouterProvider router={router} />
-    </GlobalContext>
-  </React.StrictMode>
+    </React.StrictMode>
+  </ContextProvider>
 );
