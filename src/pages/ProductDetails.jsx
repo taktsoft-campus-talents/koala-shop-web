@@ -28,13 +28,24 @@ export function ProductDetails() {
   return (
     <div className="product-details">
       <img
-        src={product.image}
+        src={product.img}
         alt={product.title}
         className="product-details-image"
       />
-      <h1>{product.title}</h1>
-      <p>${product.price}</p>
-      <p>{product.description}</p>
+      <h1 className="product-details-title">{product.title}</h1>
+      <p className="product-details-price">Price: €{product.price}</p>
+      <p className="product-details-description">{product.description}</p>
+      <div
+        className={
+          product.leftInStock > 0
+            ? "product-details-stock"
+            : "product-details-stock out-of-stock"
+        }
+      >
+        {product.leftInStock > 0
+          ? `${product.leftInStock} in stock`
+          : "out of stock"}
+      </div>
     </div>
   );
 }
