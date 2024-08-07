@@ -20,7 +20,7 @@ export function Nav() {
           <a href="#aboutus">About Us</a>
         </li>
         <li>
-          <a href="#cart">Cart 🛒</a>
+          <a href="/cart">Cart</a>
         </li>
       </ul>
     </nav>
