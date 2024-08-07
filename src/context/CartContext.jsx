@@ -1,9 +1,8 @@
-import { createContext, useState, useEffect } from "react";
+import { createContext, useState } from "react";
 
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  const [totalPrice, setTotalPrice] = useState(0);
   // I propose to have a single context for all global values
   // like user login data, special offers, cart, etc
 
@@ -28,10 +27,7 @@ export const CartProvider = ({ children }) => {
     });
   };
 
-  useEffect(() => {
-    const total = cartItems.reduce((acc, item) => acc + item.price, 0);
-    setTotalPrice(total);
-  }, [cartItems]);
+  const totalPrice = cartItems.reduce((acc, item) => acc + item.price, 0); //acc + item.price * item.quantity, 0
 
   const removeFromCart = (id) => {
     setCartItems(cartItems.filter((item) => item.id !== id));

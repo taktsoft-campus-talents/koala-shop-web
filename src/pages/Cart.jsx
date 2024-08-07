@@ -18,7 +18,6 @@ export function Cart() {
                 <li key={item.id} className="cart-item">
                   <h4>Product: {item.title}</h4>
                   <p>Price: {formatPrice(item.price)}</p>
-                  <p>Quantity: {item.quantity} </p>
                 </li>
               ))}
             </ul>
