@@ -7,9 +7,13 @@ import { formatPrice } from "../utils/utils";
 export const ProductCard = ({ product }) => {
   const { addProductToCart } = useContext(CartContext);
   const { title, category, description, img, price, leftInStock, id } = product;
+
   const handleAddToCart = () => {
-    if (leftInStock > 0) addProductToCart({ title, price });
+    if (leftInStock > 0) {
+      addProductToCart({ id, title, price, leftInStock });
+    }
   };
+
   // console.log(product);
   // const ProductCard = () => {
   // Dummy data
@@ -24,8 +28,8 @@ export const ProductCard = ({ product }) => {
   //   const price = 2011.95;
   //   const stock = 0;
   return (
-    <Link to={`/products/${id}`} className="product-card-link">
-      <div className="product-card-container">
+    <div className="product-card-container">
+      <Link to={`/products/${id}`} className="product-card-link">
         <img className="product-img" src={img} alt={title} />
         <div
           className={
@@ -38,16 +42,16 @@ export const ProductCard = ({ product }) => {
         <h2 className="product-title">{title}</h2>
         <div className="product-cart-row">
           <h3 className="product-price">Price: {formatPrice(product.price)}</h3>
-          <button className="button-primary" onClick={handleAddToCart}>
-            Add to cart
-          </button>
         </div>
         <ul className="product-desc">
           {description.split("\n").map((element, index) => (
             <li key={index}>{element}</li>
           ))}
         </ul>
-      </div>
-    </Link>
+      </Link>{" "}
+      <button className="button-primary" onClick={handleAddToCart}>
+        Add to cart
+      </button>
+    </div>
   );
 };
