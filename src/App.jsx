@@ -1,6 +1,6 @@
 import styles from "./App.module.css";
 
-function App() {
+export function App() {
   return (
     <>
       <h1 className={styles.title}>The Koala Shop</h1>
