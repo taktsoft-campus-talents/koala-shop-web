@@ -1,9 +1,12 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
 import "./ProductCard.css";
+import { Link } from "react-router-dom";
+import { formatPrice } from "../utils/utils";
+
 export const ProductCard = ({ product }) => {
   const { addProductToCart } = useContext(CartContext);
-  const { title, category, description, img, price, leftInStock } = product;
+  const { title, category, description, img, price, leftInStock, id } = product;
   const handleAddToCart = () => {
     if (leftInStock > 0) addProductToCart({ title, price });
   };
@@ -21,32 +24,30 @@ export const ProductCard = ({ product }) => {
   //   const price = 2011.95;
   //   const stock = 0;
   return (
-    <div className="product-card-container">
-      <img className="product-img" src={img} alt={title} />
-      <div
-        className={
-          leftInStock > 0 ? "product-stock" : "product-stock out-of-stock"
-        }
-      >
-        {leftInStock > 0 ? `${leftInStock} in stock` : "out of stock"}
-      </div>
-      <h5 className="product-category">{category}</h5>
-      <h2 className="product-title">{title}</h2>
-      <div className="product-cart-row">
-        <h3 className="product-price">Price: €{price}</h3>
-        <button
-          className="button-primary"
-          onClick={handleAddToCart}
-          disabled={leftInStock === 0}
+    <Link to={`/products/${id}`} className="product-card-link">
+      <div className="product-card-container">
+        <img className="product-img" src={img} alt={title} />
+        <div
+          className={
+            leftInStock > 0 ? "product-stock" : "product-stock out-of-stock"
+          }
         >
-          Add to cart
-        </button>
+          {leftInStock > 0 ? `${leftInStock} in stock` : "out of stock"}
+        </div>
+        <h5 className="product-category">{category}</h5>
+        <h2 className="product-title">{title}</h2>
+        <div className="product-cart-row">
+          <h3 className="product-price">Price: {formatPrice(product.price)}</h3>
+          <button className="button-primary" onClick={handleAddToCart}>
+            Add to cart
+          </button>
+        </div>
+        <ul className="product-desc">
+          {description.split("\n").map((element, index) => (
+            <li key={index}>{element}</li>
+          ))}
+        </ul>
       </div>
-      <ul className="product-desc">
-        {description.split("\n").map((element, index) => (
-          <li key={index}>{element}</li>
-        ))}
-      </ul>
-    </div>
+    </Link>
   );
 };
