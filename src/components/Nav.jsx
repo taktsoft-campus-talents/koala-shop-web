@@ -1,24 +1,27 @@
 import "./Nav.css";
+import { Link } from "react-router-dom";
 
 export function Nav() {
   return (
     <nav className="navbar">
-      <div className="logo">🐨</div>
+      <div className="logo">
+        <img src="https://tangelocat.com/koala-shop/koala-kawai-logo.png" />
+      </div>
       <ul className="navbar-links">
         <li>
-          <a href="/">Homepage</a>
+          <Link to="/">Homepage</Link>
         </li>
         <li>
-          <a href="/products">Products</a>
+          <Link to="/products">Products</Link>
         </li>
         <li>
-          <a href="#deals">Deals</a>
+          <Link to="#">Deals</Link>
         </li>
         <li>
-          <a href="#aboutus">About Us</a>
+          <Link to="#">About Us</Link>
         </li>
         <li>
-          <a href="#cart">Cart 🛒</a>
+          <Link to="/cart">Cart</Link>
         </li>
       </ul>
     </nav>
