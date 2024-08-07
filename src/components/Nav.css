@@ -10,3 +10,8 @@
   text-decoration: none;
   font-family: var(--font-primary);
 }
+
+.logo img {
+  width: 10rem;
+  height: 10rem;
+}
