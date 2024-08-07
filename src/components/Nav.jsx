@@ -1,4 +1,5 @@
 import "./Nav.css";
+import { Link } from "react-router-dom";
 
 export function Nav() {
   return (
@@ -8,19 +9,19 @@ export function Nav() {
       </div>
       <ul className="navbar-links">
         <li>
-          <a href="/">Homepage</a>
+          <Link to="/">Homepage</Link>
         </li>
         <li>
-          <a href="/products">Products</a>
+          <Link to="/products">Products</Link>
         </li>
         <li>
-          <a href="#deals">Deals</a>
+          <Link to="#">Deals</Link>
         </li>
         <li>
-          <a href="#aboutus">About Us</a>
+          <Link to="#">About Us</Link>
         </li>
         <li>
-          <a href="#cart">Cart 🛒</a>
+          <Link to="/cart">Cart</Link>
         </li>
       </ul>
     </nav>
