@@ -1,24 +1,12 @@
-import { useState } from "react";
 import { PromoCard } from "../components/PromoCard";
 import "./Home.css";
 
 export function Home() {
-  const [name, setName] = useState(null);
-
-  function handleSubmit(event) {
-    event.preventDefault();
-  }
-
   return (
     <>
       <div className="homepage">
         <div className="homepage-content">
           <h2>Home</h2>
-          <form action="" onSubmit={(event) => handleSubmit(event)}>
-            <input onChange={(event) => setName(event.target.value)} />
-            <button type="submit">Log in</button>
-            Your name: {name}
-          </form>
           <PromoCard
             offer={{
               id: 1,
@@ -29,7 +17,7 @@ export function Home() {
               category: "Category 1",
               leftInStock: 10,
             }}
-          />{" "}
+          />
         </div>
       </div>
     </>
