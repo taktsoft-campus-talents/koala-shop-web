@@ -3,7 +3,9 @@ import "./Nav.css";
 export function Nav() {
   return (
     <nav className="navbar">
-      <div className="logo">🐨</div>
+      <div className="logo">
+        <img src="https://tangelocat.com/koala-shop/koala-kawai-logo.png" />
+      </div>
       <ul className="navbar-links">
         <li>
           <a href="/">Homepage</a>

@@ -1,10 +1,16 @@
+import { useContext } from "react";
+import { CartContext } from "../context/CartContext";
 import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/utils";
 
 export const ProductCard = ({ product }) => {
-  const { title, category, description, img, price, leftInStock } = product;
-  console.log(product);
+  const { addProductToCart } = useContext(CartContext);
+  const { title, category, description, img, price, leftInStock, id } = product;
+  const handleAddToCart = () => {
+    if (leftInStock > 0) addProductToCart({ title, price });
+  };
+  // console.log(product);
   // const ProductCard = () => {
   // Dummy data
   //   const title = "MSI GeForce RTX 4090 Gaming X Trio 24G";
@@ -32,7 +38,9 @@ export const ProductCard = ({ product }) => {
         <h2 className="product-title">{title}</h2>
         <div className="product-cart-row">
           <h3 className="product-price">Price: {formatPrice(product.price)}</h3>
-          <button className="button-primary">Add to cart</button>
+          <button className="button-primary" onClick={handleAddToCart}>
+            Add to cart
+          </button>
         </div>
         <ul className="product-desc">
           {description.split("\n").map((element, index) => (
