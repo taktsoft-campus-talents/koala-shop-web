@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { PromoCard } from "../components/PromoCard";
 import "./Home.css";
+import { OfferList } from "../components/OfferList";
 
 export function Home() {
   const [name, setName] = useState(null);
@@ -19,6 +20,7 @@ export function Home() {
             <button type="submit">Log in</button>
             Your name: {name}
           </form>
+          <OfferList />
           <PromoCard
             offer={{
               id: 1,
