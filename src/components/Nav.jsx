@@ -4,9 +4,8 @@ import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Nav() {
-  const { user, logout } = useContext(UserContext);
+  const { user, logout, login } = useContext(UserContext);
   const [name, setName] = useState("");
-  const { login } = useContext(UserContext);
 
   function handleSubmit(event) {
     event.preventDefault();
