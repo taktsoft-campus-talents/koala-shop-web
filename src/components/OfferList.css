@@ -1,0 +1,15 @@
+.offer-list-container {
+  padding: 1rem;
+  margin: 1rem;
+}
+
+.offer-list {
+  display: flex;
+  flex-direction: column;
+  margin-top: 0.5rem;
+}
+
+.offer-list-item {
+  /* reserved for offer list item styling */
+  display: inline;
+}
