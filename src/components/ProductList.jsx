@@ -2,8 +2,9 @@ import { useEffect, useState } from "react";
 import { ProductCard } from "./ProductCard";
 import "./ProductList.css";
 
-const URL = import.meta.env.VITE_API_URL; // get url from Henning
+// const URL = import.meta.env.VITE_API_URL; get url from Henning
 
+const URL = "http://localhost:3000";
 // const dummyData = [
 //   {
 //     title: "Kühlschrank",
