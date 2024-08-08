@@ -4,9 +4,12 @@ import "./ProductCard.css";
 import { Link } from "react-router-dom";
 import { formatPrice } from "../utils/utils";
 
+const imagePath = import.meta.env.VITE_IMG_PATH;
+
 export const ProductCard = ({ product }) => {
   const { addProductToCart } = useContext(CartContext);
-  const { title, category, description, img, price, leftInStock, id } = product;
+  const { title, category, description, image, price, leftInStock, id } =
+    product;
 
   const handleAddToCart = () => {
     if (leftInStock > 0) {
@@ -24,13 +27,17 @@ export const ProductCard = ({ product }) => {
   // MSI The GAMING series is the ideal graphics card for all gamers, including adventurers, esports participants, live streamers and many more. The GAMING range represents the spirit of gamers and the power of graphics cards with a stylish exterior.
   // Stay cool and quiet. The TRI Frozr 3 cooling design from MSI improves heat dissipation around the graphics card.
   // The fans are completely stopped so there is no noise when active cooling is not required. As soon as the temperature rises when playing, the fans automatically rotate again.`;
-  //   const img = "https://m.media-amazon.com/images/I/81KR0fO8WgL._AC_SL1500_.jpg";
+  //   const image = "https://m.media-amazon.com/images/I/81KR0fO8WgL._AC_SL1500_.jpg";
   //   const price = 2011.95;
   //   const stock = 0;
   return (
     <div className="product-card-container">
       <Link to={`/products/${id}`} className="product-card-link">
-        <img className="product-img" src={img} alt={title} />
+        <img
+          className="product-img"
+          src={`${imagePath}/${image}`}
+          alt={title}
+        />
         <div
           className={
             leftInStock > 0 ? "product-stock" : "product-stock out-of-stock"

@@ -9,9 +9,10 @@ export const OfferList = () => {
   useEffect(() => {
     const fetchOffers = async () => {
       try {
-        const response = await fetch(`${URL}/offers`);
+        const response = await fetch(`${URL}/specials`);
         const data = await response.json();
         if (response.ok) {
+          console.log(data);
           setOffers(data);
         } else {
           console.log(data);
