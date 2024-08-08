@@ -22,9 +22,24 @@ export const OfferList = () => {
 
       // Dummy data
       // setOffers([
-      //   { productId: 1, title: "Awesome product", image: "https://tangelocat.com/koala-shop/koala-t-shirt.jpg", price: 1000 },
-      //   { productId: 2, title: "Awesome product XS", image: "https://tangelocat.com/koala-shop/koala-t-shirt.jpg", price: 900  },
-      //   { productId: 3, title: "Awesome product XXL", image: "https://tangelocat.com/koala-shop/koala-t-shirt.jpg", price: 1150  },
+      //   {
+      //     productId: 1,
+      //     title: "Awesome product",
+      //     image: "https://tangelocat.com/koala-shop/koala-t-shirt.jpg",
+      //     price: 1000,
+      //   },
+      //   {
+      //     productId: 2,
+      //     title: "Awesome product XS",
+      //     image: "https://tangelocat.com/koala-shop/koala-t-shirt.jpg",
+      //     price: 900,
+      //   },
+      //   {
+      //     productId: 3,
+      //     title: "Awesome product XXL",
+      //     image: "https://tangelocat.com/koala-shop/koala-t-shirt.jpg",
+      //     price: 1150,
+      //   },
       // ]);
     };
 
@@ -38,7 +53,9 @@ export const OfferList = () => {
       {offers.length > 0 && (
         <ul className="offer-list">
           {offers.map((offer) => (
-            <PromoCard key={offer.productId} offer={offer} />
+            <li key={offer.productId}>
+              <PromoCard offer={offer} />
+            </li>
           ))}
         </ul>
       )}
