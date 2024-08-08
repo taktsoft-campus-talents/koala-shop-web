@@ -1,4 +1,5 @@
 import { PromoCard } from "../components/PromoCard";
+// import { OfferList } from "../components/OfferList";
 import "./Home.css";
 
 export function Home() {
@@ -7,13 +8,14 @@ export function Home() {
       <div className="homepage">
         <div className="homepage-content">
           <h2>Home</h2>
+          {/* <OfferList /> */}
           <PromoCard
             offer={{
               id: 1,
-              title: "Laptop",
+              title: "Koala Mug",
               description: "Description 1",
               price: 500,
-              image: "image1.jpg",
+              image: "koala-mug.jpg",
               category: "Category 1",
               leftInStock: 10,
             }}
