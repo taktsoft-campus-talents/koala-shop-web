@@ -1,9 +1,12 @@
 import "./Nav.css";
 import { UserContext } from "../context/UserContext";
+import { CartContext } from "../context/CartContext";
 import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 
 export function Nav() {
+  const { cartItems } = useContext(CartContext);
+  const totalItems = cartItems.length;
   const { user, logout, login } = useContext(UserContext);
   const [name, setName] = useState("");
 
@@ -32,7 +35,10 @@ export function Nav() {
           <Link to="#">About Us</Link>
         </li>
         <li>
-          <Link to="/cart">Cart</Link>
+          <Link className="cart-link" to="/cart">
+            Cart{" "}
+            {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
+          </Link>
         </li>
       </ul>
       {user ? (
