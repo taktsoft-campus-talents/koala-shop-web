@@ -32,6 +32,8 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
+
+  margin-left: auto;
 }
 
 .cart-item button:hover {
