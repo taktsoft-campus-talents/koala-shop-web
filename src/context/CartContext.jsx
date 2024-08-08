@@ -6,10 +6,7 @@ export const CartProvider = ({ children }) => {
   // I propose to have a single context for all global values
   // like user login data, special offers, cart, etc
 
-  const [cartItems, setCartItems] = useState([
-    { id: 2, title: "Computer 1", price: 21300, quantity: 5 },
-    { id: 3, title: "Laptop Test 2", price: 5000, quantity: 1 },
-  ]);
+  const [cartItems, setCartItems] = useState([]);
 
   const addProductToCart = (product) => {
     setCartItems((prevItems) => {
