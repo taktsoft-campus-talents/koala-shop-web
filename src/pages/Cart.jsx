@@ -4,7 +4,7 @@ import { formatPrice } from "../utils/utils";
 import "./Cart.css";
 
 export function Cart() {
-  const { cartItems, totalPrice } = useContext(CartContext);
+  const { cartItems, totalPrice, removeFromCart } = useContext(CartContext);
   return (
     <>
       <div className="cart-page">
@@ -18,6 +18,9 @@ export function Cart() {
                 <li key={item.id} className="cart-item">
                   <h4>Product: {item.title}</h4>
                   <p>Price: {formatPrice(item.price)}</p>
+                  <button onClick={() => removeFromCart(item.id)}>
+                    Remove
+                  </button>
                 </li>
               ))}
             </ul>

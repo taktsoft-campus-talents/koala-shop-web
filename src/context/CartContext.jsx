@@ -3,9 +3,6 @@ import { createContext, useState } from "react";
 export const CartContext = createContext();
 
 export const CartProvider = ({ children }) => {
-  // I propose to have a single context for all global values
-  // like user login data, special offers, cart, etc
-
   const [cartItems, setCartItems] = useState([]);
 
   const addProductToCart = (product) => {
