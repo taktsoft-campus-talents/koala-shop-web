@@ -1,19 +1,19 @@
 import { useState } from "react";
-export function PriceSorting() {
-  const [sorting, setSorting] = useState(null);
+export function AlfabetSorting() {
+  const [alfSorting, setAlfSorting] = useState(null);
   const pricing = [
     { id: 0, value: "" },
-    { id: 1, value: "lower price first" },
-    { id: 2, value: "higher price first" },
+    { id: 1, value: "a to z" },
+    { id: 2, value: "z to a" },
   ];
   return (
     <>
-      <p>Sort by price:</p>
+      <p>Sort by name:</p>
 
       <select
-        value={sorting}
+        value={alfSorting}
         onChange={(event) => {
-          setSorting(event.target.value);
+          setAlfSorting(event.target.value);
         }}
       >
         {pricing.map((order) => {

@@ -1,14 +1,12 @@
 import { ProductList } from "../components/ProductList";
 import "./Products.css";
-import { CategorySelector } from "../components/CategorySelector";
-import { PriceSorting } from "../components/PriceSorting";
+import { Filter } from "../components/Filter";
 
 export function Products() {
   return (
     <div className="products">
       <h2>Products</h2>
-      <CategorySelector></CategorySelector>
-      <PriceSorting />
+      <Filter />
       <ProductList />
     </div>
   );
