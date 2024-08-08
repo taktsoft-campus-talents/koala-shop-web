@@ -1,25 +1,23 @@
-import { useState } from "react";
-export function CategorySelector() {
-  const [cat, setCat] = useState(null);
+export function CategorySelector({ category, onChangeCategory }) {
   const categories = [
-    { id: 0, value: "" },
-    { id: 1, value: "tech" },
-    { id: 2, value: "home" },
+    { id: 0, value: "all", displayValue: "All" },
+    { id: 1, value: "tech", displayValue: "Technology" },
+    { id: 2, value: "home", displayValue: "Home" },
   ];
   return (
     <>
       <p>Select category:</p>
 
       <select
-        value={cat}
+        value={category}
         onChange={(event) => {
-          setCat(event.target.value);
+          onChangeCategory(event.target.value);
         }}
       >
         {categories.map((category) => {
           return (
             <option key={category.id} value={category.value}>
-              {category.value}
+              {category.displayValue}
             </option>
           );
         })}
