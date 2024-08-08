@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { ProductCard } from "./ProductCard";
 import "./ProductList.css";
 
-const URL = import.meta.env.VITE_API_URL; // get url from Henning
+const URL = import.meta.env.VITE_API_URL;
 
 // const dummyData = [
 //   {
@@ -23,28 +23,37 @@ const URL = import.meta.env.VITE_API_URL; // get url from Henning
 //   },
 // ];
 
-export function ProductList() {
+export function ProductList({ category, sortBy, sortOrder }) {
   const [products, setProducts] = useState([]);
 
   //fetch data from server api
 
+  console.log(URL);
+
   useEffect(() => {
     const fetchProducts = async () => {
       try {
-        const response = await fetch(`${URL}/products`);
+        const categoryQuery = category !== "all" ? `category=${category}&` : "";
+        const sortByQuery = sortBy !== "default" ? `sort=${sortBy}&` : "";
+        const sortOrderQuery = `order=${sortOrder}`;
+        const response = await fetch(
+          `${URL}/products?${categoryQuery}${sortByQuery}${sortOrderQuery}`
+        );
         const data = await response.json();
+        console.log(data);
         if (response.ok) {
           setProducts(data);
         } else {
           console.log(data);
         }
       } catch (error) {
+        console.log(error.stack);
         console.error("Error fetching products:", error);
       }
     };
 
     fetchProducts();
-  }, []);
+  }, [category, sortBy, sortOrder]);
 
   return (
     <div className="product-list">
