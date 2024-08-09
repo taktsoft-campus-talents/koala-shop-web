@@ -14,7 +14,7 @@ export function Home() {
               id: 1,
               title: "Koala Mug",
               description: "Description 1",
-              price: 500,
+              price: 2400,
               image: "koala-mug.jpg",
               category: "Category 1",
               leftInStock: 10,
