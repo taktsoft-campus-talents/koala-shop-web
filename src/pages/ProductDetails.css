@@ -54,3 +54,7 @@
   border-top-left-radius: 1rem;
   margin-bottom: -2rem;
 }
+
+.button-primary {
+  margin: 0.5rem 0rem 0.5rem 0;
+}
