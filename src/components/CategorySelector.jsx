@@ -1,3 +1,4 @@
+import "./FilterOptions.css";
 export function CategorySelector({ category, onChangeCategory }) {
   const categories = [
     { id: 0, value: "all", displayValue: "All" },
@@ -5,10 +6,16 @@ export function CategorySelector({ category, onChangeCategory }) {
     { id: 2, value: "home", displayValue: "Home" },
   ];
   return (
-    <>
-      <p>Select category:</p>
+    <div className="filter-option">
+      <label htmlFor="category-select">
+        <p>
+          <span className="desktop">Select category:</span>
+          <span className="mobile">Category:</span>
+        </p>
+      </label>
 
       <select
+        id="category-select"
         value={category}
         onChange={(event) => {
           onChangeCategory(event.target.value);
@@ -22,6 +29,6 @@ export function CategorySelector({ category, onChangeCategory }) {
           );
         })}
       </select>
-    </>
+    </div>
   );
 }

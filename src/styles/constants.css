@@ -1,13 +1,15 @@
 :root {
   /* Colors */
-  --color-primary: #63a002; /* Green */
+  --color-primary: #4d7d00; /* Green */
   --color-secondary: #386663; /* Teal */
-  --color-background: #dadbd0; /* Light Gray */
+  --color-background: rgb(248, 248, 248);
   --color-text: #2f312a; /* Black */
+  --color-light-text: rgb(248, 248, 248);
   --color-error: #ff5449; /* Coral Red */
 
   /* Fonts */
   --font-primary: "Open Sans", sans-serif;
 
-  /* Metrics */
+  /* margin */
+  --margin-title: 40px 20px 20px 20px;
 }

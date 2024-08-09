@@ -1,4 +1,6 @@
 @import "../styles/constants.css";
-.homepage {
+
+h2 {
+  font-family: var(--font-primary);
   padding-top: 20px;
 }

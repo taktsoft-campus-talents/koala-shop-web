@@ -7,10 +7,10 @@ export function Home() {
     <>
       <div className="homepage">
         <div className="homepage-content">
-          <h2>Home</h2>
+          <h2>The Koala-shop</h2>
           {/* <OfferList /> */}
           <PromoCard
-            offer={{
+            product={{
               id: 1,
               title: "Koala Mug",
               description: "Description 1",

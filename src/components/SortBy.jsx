@@ -1,3 +1,4 @@
+import "./FilterOptions.css";
 export function SortBy({ sortBy, onChangeSortBy }) {
   const pricing = [
     { id: 0, value: "default", displayValue: "Default" },
@@ -5,10 +6,16 @@ export function SortBy({ sortBy, onChangeSortBy }) {
     { id: 2, value: "title", displayValue: "Product name" },
   ];
   return (
-    <>
-      <p>Sort by:</p>
+    <div className="filter-option">
+      <label htmlFor="sortby-select">
+        <p>
+          <span className="desktop">Sort by:</span>
+          <span className="mobile">Sort:</span>
+        </p>
+      </label>
 
       <select
+        id="sortby-select"
         value={sortBy}
         onChange={(event) => {
           onChangeSortBy(event.target.value);
@@ -22,6 +29,6 @@ export function SortBy({ sortBy, onChangeSortBy }) {
           );
         })}
       </select>
-    </>
+    </div>
   );
 }

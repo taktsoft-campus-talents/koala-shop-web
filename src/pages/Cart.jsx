@@ -8,9 +8,9 @@ export function Cart() {
   return (
     <>
       <div className="cart-page">
-        <h1>Shopping Cart</h1>
+        <h2>Shopping Cart</h2>
         {cartItems.length === 0 ? (
-          <p>Your cart is empty.</p>
+          <p className="cart-page">Your cart is empty.</p>
         ) : (
           <div>
             <ul className="cart-items">

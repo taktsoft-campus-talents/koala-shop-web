@@ -1,10 +1,11 @@
 import { Outlet } from "react-router-dom";
 import { Nav } from "../components/Nav";
+import "../styles/globalStyles.css";
+
 export function RootLayout() {
   return (
     <>
       <Nav />
-      <h1>The Koala Shop</h1>
       <Outlet />
     </>
   );

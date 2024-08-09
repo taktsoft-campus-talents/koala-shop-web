@@ -1,7 +1,8 @@
 @import "../styles/constants.css";
 
 .cart-page {
-  padding: 20px;
+  font-family: var(--font-primary);
+  margin-left: 20px;
 }
 
 .cart-items {

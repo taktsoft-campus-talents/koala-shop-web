@@ -2,7 +2,7 @@ import "./Nav.css";
 import { UserContext } from "../context/UserContext";
 import { CartContext } from "../context/CartContext";
 import { useContext, useState } from "react";
-import { Link } from "react-router-dom";
+import { NavLink } from "react-router-dom";
 
 export function Nav() {
   const { cartItems } = useContext(CartContext);
@@ -19,40 +19,54 @@ export function Nav() {
   return (
     <nav className="navbar">
       <div className="logo">
-        <img src="https://tangelocat.com/koala-shop/koala-kawai-logo.png" />
+        <img
+          src="https://tangelocat.com/koala-shop/koala-logo-cropped.png"
+          alt="logo from koala-shop"
+        />
       </div>
       <ul className="navbar-links">
         <li>
-          <Link to="/">Homepage</Link>
+          <NavLink to="/" activeClassName="active">
+            Homepage
+          </NavLink>
         </li>
         <li>
-          <Link to="/products">Products</Link>
+          <NavLink to="/products" activeClassName="active">
+            Products
+          </NavLink>
+        </li>
+        {/* <li>
+          <NavLink to="#" activeClassName="active">
+            Deals
+          </NavLink>
         </li>
         <li>
-          <Link to="#">Deals</Link>
-        </li>
+          <NavLink to="#" activeClassName="active">
+            About Us
+          </NavLink>
+        </li> */}
         <li>
-          <Link to="#">About Us</Link>
-        </li>
-        <li>
-          <Link className="cart-link" to="/cart">
-            Cart{" "}
+          <NavLink className="cart-link" to="/cart" activeClassName="active">
+            Cart
             {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
-          </Link>
+          </NavLink>
         </li>
       </ul>
       {user ? (
-        <>
-          <div>Logged in as {user}</div>
-          <button onClick={logout}>Log out</button>
-        </>
+        <div className="login-container">
+          <div className="login">{user}</div>
+          <button onClick={logout}>Logout</button>
+        </div>
       ) : (
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <input
+            id="name-input"
             value={name}
             onChange={(event) => setName(event.target.value)}
           />
-          <button type="submit">Log in</button>
+          <label htmlFor="name-input">
+            <button type="submit">Login</button>
+          </label>
         </form>
       )}
     </nav>

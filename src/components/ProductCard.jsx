@@ -8,8 +8,7 @@ const imagePath = import.meta.env.VITE_IMG_PATH;
 
 export const ProductCard = ({ product }) => {
   const { addProductToCart } = useContext(CartContext);
-  const { title, category, description, image, price, leftInStock, id } =
-    product;
+  const { title, category, teaser, image, price, leftInStock, id } = product;
 
   const handleAddToCart = () => {
     if (leftInStock > 0) {
@@ -32,30 +31,28 @@ export const ProductCard = ({ product }) => {
   //   const stock = 0;
   return (
     <div className="product-card-container">
-      <Link to={`/products/${id}`} className="product-card-link">
-        <img
-          className="product-img"
-          src={`${imagePath}/${image}`}
-          alt={title}
-        />
-        <div
-          className={
-            leftInStock > 0 ? "product-stock" : "product-stock out-of-stock"
-          }
-        >
-          {leftInStock > 0 ? `${leftInStock} in stock` : "out of stock"}
-        </div>
-        <h5 className="product-category">{category}</h5>
-        <h2 className="product-title">{title}</h2>
-        <div className="product-cart-row">
-          <h3 className="product-price">Price: {formatPrice(product.price)}</h3>
-        </div>
-        <ul className="product-desc">
-          {description.split("\n").map((element, index) => (
-            <li key={index}>{element}</li>
-          ))}
-        </ul>
-      </Link>{" "}
+      <img className="product-img" src={`${imagePath}/${image}`} alt={title} />
+      <div
+        className={
+          leftInStock > 0 ? "product-stock" : "product-stock out-of-stock"
+        }
+      >
+        {leftInStock > 0 ? `${leftInStock} in stock` : "out of stock"}
+      </div>
+      <h5 className="product-category">{category}</h5>
+      <h2 className="product-title">{title}</h2>
+      <ul className="product-desc">
+        {teaser.split("\n").map((element, index) => (
+          <li key={index}>{element}</li>
+        ))}
+      </ul>
+      <div className="product-cart-row">
+        <h3 className="product-price">Price: {formatPrice(product.price)}</h3>
+        <Link to={`/products/${id}`} className="product-card-link">
+          <p>More product details...</p>
+        </Link>
+      </div>
+
       <button className="button-primary" onClick={handleAddToCart}>
         Add to cart
       </button>
