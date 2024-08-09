@@ -53,19 +53,25 @@ export function Nav() {
         </li>
       </ul>
       {user ? (
+        //Log out
         <div className="login-container">
-          <div className="login">{user}</div>
-          <button onClick={logout}>Logout</button>
+          <div className="logout">
+            {user}
+            <button onClick={logout}>Log out</button>
+          </div>
         </div>
       ) : (
+        //Log in
         <form action="" onSubmit={(event) => handleSubmit(event)}>
           <input
             id="name-input"
             value={name}
+            minLength="3"
+            maxLength="10"
             onChange={(event) => setName(event.target.value)}
           />
           <label htmlFor="name-input">
-            <button type="submit">Login</button>
+            <button type="submit">Log in</button>
           </label>
         </form>
       )}

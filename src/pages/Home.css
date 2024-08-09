@@ -10,3 +10,17 @@
     text-align: center;
   }
 }
+.qrcode {
+  display: flex;
+  flex-direction: column;
+  max-width: 150px;
+  margin: 20px;
+  padding: 15px;
+  gap: 15px;
+
+  border: 2px solid green;
+  border-radius: 20px;
+  background-color: #d1e8b5;
+  color: rgb(35, 58, 35);
+  font-family: var(--font-primary);
+}
