@@ -26,27 +26,23 @@ export function Nav() {
       </div>
       <ul className="navbar-links">
         <li>
-          <NavLink to="/" activeClassName="active">
-            Homepage
-          </NavLink>
+          <NavLink to="/">Homepage</NavLink>
         </li>
         <li>
-          <NavLink to="/products" activeClassName="active">
-            Products
-          </NavLink>
+          <NavLink to="/products">Products</NavLink>
         </li>
         {/* <li>
-          <NavLink to="#" activeClassName="active">
+          <NavLink to="#" >
             Deals
           </NavLink>
         </li>
         <li>
-          <NavLink to="#" activeClassName="active">
+          <NavLink to="#">
             About Us
           </NavLink>
         </li> */}
         <li>
-          <NavLink className="cart-link" to="/cart" activeClassName="active">
+          <NavLink className="cart-link" to="/cart">
             Cart
             {totalItems > 0 && <span className="cart-badge">{totalItems}</span>}
           </NavLink>
@@ -56,7 +52,7 @@ export function Nav() {
         //Log out
         <div className="login-container">
           <div className="logout">
-            {user}
+            {user.name}
             <button onClick={logout}>Log out</button>
           </div>
         </div>

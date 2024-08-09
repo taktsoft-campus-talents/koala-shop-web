@@ -1,12 +1,32 @@
 import { useContext } from "react";
 import { CartContext } from "../context/CartContext";
+import { UserContext } from "../context/UserContext";
 import { formatPrice } from "../utils/utils";
+import { useEffect, useState } from "react";
 import "./Cart.css";
 
 export function Cart() {
+  const [isUserUpdated, setIsUserUpdated] = useState(false);
+  const { user, login } = useContext(UserContext);
   const { cartItems, totalPrice, removeFromCart } = useContext(CartContext);
 
-  const discount = totalPrice * 0.1;
+  useEffect(() => {
+    const updateUserData = async () => {
+      try {
+        await login(user.name);
+      } catch (err) {
+        console.log(err);
+      } finally {
+        setIsUserUpdated(true);
+      }
+      await login(user.name);
+    };
+    if (user && !isUserUpdated) {
+      updateUserData();
+    }
+  }, [isUserUpdated, user, login]);
+
+  const discount = user?.discount ? totalPrice * 0.1 : 0;
 
   return (
     <>
@@ -29,8 +49,12 @@ export function Cart() {
             </ul>
 
             <p>Total: {formatPrice(totalPrice)}</p>
-            <p>You receive a 10 % discount: {formatPrice(discount)}</p>
-            <h2>Total cost: {formatPrice(totalPrice - discount)}</h2>
+            {user?.discount && (
+              <>
+                <p>You receive a 10 % discount</p>
+                <h2>Total cost: {formatPrice(totalPrice - discount)}</h2>
+              </>
+            )}
           </div>
         )}
       </div>
