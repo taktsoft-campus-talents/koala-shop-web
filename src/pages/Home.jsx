@@ -9,6 +9,10 @@ export function Home() {
         <div className="homepage-content">
           <h2>The Koala-shop</h2>
           {/* <OfferList /> */}
+          <div className="qrcode">
+            Scan this code to get an exclusive disccount!
+            <img src="src/assets/qrcode.png" alt="" />
+          </div>
           <PromoCard
             product={{
               id: 1,
