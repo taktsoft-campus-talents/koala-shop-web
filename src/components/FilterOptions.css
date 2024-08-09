@@ -1,0 +1,30 @@
+.filter-option {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+  column-gap: 5px;
+}
+
+.desktop {
+  position: relative;
+  top: 4px;
+}
+
+.mobile {
+  display: none;
+}
+
+@media screen and (max-width: 640px) {
+  .filter-option {
+    flex-direction: column;
+  }
+  .desktop {
+    display: none;
+  }
+  .mobile {
+    display: inline;
+    font-size: 0.8rem;
+  }
+}

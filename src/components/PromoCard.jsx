@@ -1,9 +1,10 @@
 import "./PromoCard.css";
+import { formatPrice } from "../utils/utils";
 
 const imagePath = import.meta.env.VITE_IMG_PATH;
 
-export const PromoCard = ({ offer }) => {
-  const { title, image, price } = offer;
+export const PromoCard = ({ product }) => {
+  const { title, image, price } = product;
 
   console.log(image);
   console.log(`${imagePath}/${image}`);
@@ -17,7 +18,7 @@ export const PromoCard = ({ offer }) => {
         />
         <div className="offer-details">
           <h2 className="offer-title">{title}</h2>
-          <p className="offer-price">{price}</p>
+          <h3 className="product-price">Price: {formatPrice(product.price)}</h3>
         </div>
       </div>
     </div>

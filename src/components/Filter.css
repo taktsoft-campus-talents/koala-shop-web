@@ -1,15 +1,31 @@
 .filter {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
   margin: 0px;
   padding: 10px;
-  background-color: rgb(152, 212, 192);
+  background-color: #d1e8b5;
   color: rgb(21, 44, 36);
+  font-family: var(--font-primary);
 }
 select,
 select option {
-  background-color: #c9e8df;
+  background-color: var(--color-background);
   margin: 5px 2px 2px 0;
   padding-left: 10px;
   /* border-left: 1px solid #c6c6c6; */
   color: rgb(52, 68, 60);
   min-width: 150px;
+}
+
+@media screen and (max-width: 640px) {
+  .filter {
+    justify-content: space-around;
+  }
+  select,
+  select option {
+    min-width: 50px;
+    width: 100px;
+  }
 }
