@@ -5,6 +5,9 @@ import "./Cart.css";
 
 export function Cart() {
   const { cartItems, totalPrice, removeFromCart } = useContext(CartContext);
+
+  const discount = totalPrice * 0.1;
+
   return (
     <>
       <div className="cart-page">
@@ -24,7 +27,10 @@ export function Cart() {
                 </li>
               ))}
             </ul>
-            <h2>Total: {formatPrice(totalPrice)}</h2>
+
+            <p>Total: {formatPrice(totalPrice)}</p>
+            <p>You receive a 10 % discount: {formatPrice(discount)}</p>
+            <h2>Total cost: {formatPrice(totalPrice - discount)}</h2>
           </div>
         )}
       </div>
