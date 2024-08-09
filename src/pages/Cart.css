@@ -2,7 +2,10 @@
 
 .cart-page {
   font-family: var(--font-primary);
-  margin-left: 20px;
+}
+
+.cart-page p {
+  padding-left: 20px;
 }
 
 .cart-items {
