@@ -3,6 +3,7 @@ import { useParams } from "react-router-dom";
 import { formatPrice } from "../utils/utils";
 import { CartContext } from "../context/CartContext";
 import "./ProductDetails.css";
+import { Breadcrumb } from "../components/Breadcrumb";
 
 const URL = import.meta.env.VITE_API_URL;
 const imagePath = import.meta.env.VITE_IMG_PATH;
@@ -62,35 +63,57 @@ export function ProductDetails() {
     <div className="product-details">
       {product && (
         <>
-          <h1 className="product-details-title">{product.title}</h1>
-          <img
-            src={`${imagePath}/${product.image}`}
-            alt={product.title}
-            className="product-details-image"
+          <Breadcrumb
+            links={[
+              { path: "/", label: "Home" },
+              { path: "/products", label: "Products" },
+              { path: `/products/${id}`, label: product.title },
+            ]}
           />
-          <div
-            className={
-              product.leftinstock > 0
-                ? "product-details-stock"
-                : "product-details-stock out-of-stock"
-            }
-          >
-            {product.leftinstock > 0
-              ? `${product.leftinstock} in stock`
-              : "Out of stock"}
+          <h1 className="product-details-title">{product.title}</h1>
+          <div className="product-details-container">
+            <div className="product-details-image-container">
+              <img
+                src={`${imagePath}/${product.image}`}
+                alt={product.title}
+                className="product-details-image"
+              />
+            </div>
+            <div className="product-details-info">
+              <div
+                className={
+                  product.leftinstock > 0
+                    ? "product-details-stock"
+                    : "product-details-stock out-of-stock"
+                }
+              >
+                {product.leftinstock > 0
+                  ? `${product.leftinstock} in stock`
+                  : "Out of stock"}
+              </div>
+              <p className="product-details-price">
+                Price:{" "}
+                {product.price
+                  ? formatPrice(product.price)
+                  : "Price not available"}
+              </p>
+              <div className="product-details-description">
+                <p className="description">
+                  <strong>Description:</strong>
+                </p>
+                <p className="description">{product.description}</p>
+              </div>
+              <p className="product-details-delivery">
+                Delivery in 2-5 days 📦
+              </p>
+              <button
+                className="button-primary-details"
+                onClick={handleAddToCart}
+              >
+                Add to cart
+              </button>
+            </div>
           </div>
-          <p className="product-details-price">
-            Price:{" "}
-            {product.price ? formatPrice(product.price) : "Price not available"}
-          </p>
-          <p className="product-details-description">
-            <strong>Description:</strong>
-          </p>
-          <p className="product-details-description">{product.description}</p>
-
-          <button className="button-primary-details" onClick={handleAddToCart}>
-            Add to cart
-          </button>
         </>
       )}
     </div>
