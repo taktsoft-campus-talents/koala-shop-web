@@ -1,6 +1,12 @@
 @import "../styles/constants.css";
 
-h2 {
-  font-family: var(--font-primary);
-  padding-top: 20px;
+.homepage {
+  /* padding-top: 24px; */
+}
+
+@media screen and (max-width: 640px) {
+  .homepage-content h2 {
+    padding-top: 40px;
+    text-align: center;
+  }
 }

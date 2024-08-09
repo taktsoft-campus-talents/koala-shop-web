@@ -88,7 +88,7 @@ export function ProductDetails() {
           </p>
           <p className="product-details-description">{product.description}</p>
 
-          <button className="button-primary" onClick={handleAddToCart}>
+          <button className="button-primary-details" onClick={handleAddToCart}>
             Add to cart
           </button>
         </>
