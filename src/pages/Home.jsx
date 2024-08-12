@@ -1,5 +1,6 @@
 import { PromoCard } from "../components/PromoCard";
 // import { OfferList } from "../components/OfferList";
+import qrcode from "../assets/qrcode.png";
 import "./Home.css";
 
 export function Home() {
@@ -11,7 +12,7 @@ export function Home() {
           {/* <OfferList /> */}
           <div className="qrcode">
             Scan this code to get an exclusive disccount!
-            <img src="src/assets/qrcode.png" alt="" />
+            <img src={qrcode} alt="" />
           </div>
           <PromoCard
             product={{
