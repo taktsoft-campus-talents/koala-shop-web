@@ -1,12 +1,13 @@
 @import "../styles/constants.css";
 
 .products {
+  padding-top: 24px;
   background-color: var(--color-background);
 }
 
 @media screen and (max-width: 640px) {
   .products h2 {
-    padding-top: 60px;
+    padding-top: 24px;
     text-align: center;
   }
 }
