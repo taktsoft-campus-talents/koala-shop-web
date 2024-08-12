@@ -48,7 +48,7 @@ export function Cart() {
               ))}
             </ul>
 
-            <p>Total: {formatPrice(totalPrice)}</p>
+            <p className="total">Total: {formatPrice(totalPrice)}</p>
             {user?.discount && (
               <>
                 <p>You receive a 10 % discount</p>

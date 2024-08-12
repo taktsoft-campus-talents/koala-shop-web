@@ -1,16 +1,22 @@
 @import "../styles/constants.css";
 
 .cart-page {
+  padding-top: 24px;
   font-family: var(--font-primary);
-  margin-left: 20px;
+  /* margin-left: 20px; */
 }
 
 .cart-items {
+  margin-left: 20px;
   list-style-type: none;
   padding: 20px 0;
   display: flex;
   flex-direction: column;
   max-width: 60vw;
+}
+
+.total {
+  margin-left: 20px;
 }
 
 .cart-item {
@@ -33,10 +39,36 @@
   border: none;
   padding: 5px 10px;
   cursor: pointer;
-
   margin-left: auto;
 }
 
 .cart-item button:hover {
   background-color: var(--color-secondary);
+}
+
+@media screen and (max-width: 640px) {
+  .cart-page {
+    margin-top: 24px;
+  }
+  .cart-items {
+    max-width: 90vw;
+  }
+  .cart-page h2 {
+    text-align: center;
+  }
+  .cart-item {
+    padding: 8px;
+    justify-content: space-between;
+  }
+  .cart-item h4 {
+    width: min-content;
+  }
+  .cart-item p {
+    margin: 0 4px;
+    width: fit-content;
+  }
+  .cart-item button {
+    margin: 0;
+    padding: 8px;
+  }
 }
